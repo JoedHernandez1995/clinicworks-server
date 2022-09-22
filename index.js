@@ -4,7 +4,7 @@ const cors = require('cors');
 
 // create express app
 const app = express();
-app.use(cors())
+app.use(cors({credentials: true, origin: true}))
 
 // Setup server port
 const port = process.env.PORT || 8080;
@@ -42,5 +42,3 @@ app.use('/api/v1/diagnosis', diagnosis);
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
 });
-
-//testing
